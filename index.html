@@ -1,22 +1,62 @@
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
     <link href="css/materialize.css" rel="stylesheet" type="text/css">
+    <link href="css/styl.css" rel="stylesheet" type="text/css">
     <script type="javascript" href="js/materialize.css"></script>
   </head>
 
-  <body class="cyan loaded">
-    <div id="login-page" class="row">
-      <div class="col s12 l4 ofsset-l4 z-depth-4 card-panel">
-        <form class="login-form">
-          <div class="row">
-            <div class="input-field col s12 center">
-              <img src="sources/images/logos/logoiimt.png" alt="Logo Image" class="responsive-img">
-              <p class="center login-form-text">Placement Drive</p>
+  <body class="cyan loaded" style="display:flex;align-items:center">
+
+    <div class="container">
+      <div id="login-page" class="row">
+        <div class="col s12 m6 l4 offset-m3 offset-l4 z-depth-4 card-panel">
+          <form class="login-form">
+
+            <div class="row">
+              <div class="input-field col s12 center">
+                <img src="sources/images/logos/logoiimt.png" alt="Logo Image" class="responsive-img">
+                <p class="center login-form-text">Placement Drive</p>
+              </div>
             </div>
-          </div>
-        </form>
+
+            <div class="row margin">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="first_name" type="text">
+                <label for="first_name" class=active>Username</label>
+              </div>
+            </div>
+
+            <div class="row margin">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input id="password" type="password">
+                <label for="password" class="active">Password</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="submit" value="Login" class="btn waves-effect waves-light" style="width:100%">
+              </div>
+            </div>
+
+          </form>
+        </div>
       </div>
     </div>
-  </body>
 
+
+
+
+    <!-- <script type="javascript">
+        $(document).ready(function() {
+      Materialize.updateTextFields();
+    });
+    </script> -->
+  </body>
 </html>
