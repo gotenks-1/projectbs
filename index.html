@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no">
     <link href="css/materialize.css" rel="stylesheet" type="text/css">
+
     <link href="css/styl.css" rel="stylesheet" type="text/css">
-    <script type="javascript" href="js/materialize.css"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
   </head>
 
   <body class="cyan loaded" style="display:flex;align-items:center">
@@ -27,7 +29,7 @@
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="first_name" type="text">
-                <label for="first_name" class=active>Username</label>
+                <label for="first_name">Username</label>
               </div>
             </div>
 
@@ -35,13 +37,19 @@
               <div class="input-field col s12">
                 <i class="material-icons prefix">lock</i>
                 <input id="password" type="password">
-                <label for="password" class="active">Password</label>
+                <label for="password">Password</label>
+              </div>
+            </div>
+
+            <div id="login-msg-div" class="row">
+              <div class="input-field col s12">
+                <span id="login-msg"></span>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input type="submit" value="Login" class="btn waves-effect waves-light" style="width:100%">
+                <a id="submit_button" class="waves-effect waves-light btn" style="width:100%">Login</a>
               </div>
             </div>
 
@@ -53,10 +61,32 @@
 
 
 
-    <!-- <script type="javascript">
+    <script type="text/javascript">
+
+
         $(document).ready(function() {
-      Materialize.updateTextFields();
-    });
-    </script> -->
+          // $("#submitbutton").click(function(){
+          //     alert("yo");
+          // });
+          $("#login-msg").append("login failed");
+          $("#login-msg-div").hide();
+
+          $("#submit_button").click(function(){
+            if($("#password").val()=="admin")
+            {
+              $("#login-msg-div").hide();
+              alert("login success");
+            }
+            else {
+
+              $("#login-msg-div").show();
+            }
+          });
+
+          });
+
+
+
+    </script>
   </body>
 </html>
