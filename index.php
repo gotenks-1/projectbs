@@ -1,3 +1,11 @@
+<?php
+include 'bin/validate.php';
+
+if(validate()){
+  header("Location: bin/header.php");
+}
+
+?>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -68,19 +76,27 @@
           // $("#submitbutton").click(function(){
           //     alert("yo");
           // });
+
           $("#login-msg").append("login failed");
           $("#login-msg-div").hide();
 
           $("#submit_button").click(function(){
-            if($("#password").val()=="admin")
-            {
-              $("#login-msg-div").hide();
-              alert("login success");
-            }
-            else {
 
-              $("#login-msg-div").show();
-            }
+            var usrid=$("#first_name").val();
+            var passwd=$("#password").val();
+
+            $.post("bin/loginvalidate.php",{userid:usrid,pass:passwd},function(data){
+              if(data=="success"){
+                window.open("bin/header.php","_self");
+              }
+              else if (data=="failed") {
+                $("#login-msg-div").show();
+              }
+              else {
+                alert("Something went wrong!Please refresh your browser");
+              }
+            });
+
           });
 
           });

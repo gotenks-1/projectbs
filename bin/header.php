@@ -1,3 +1,10 @@
+<?php
+include 'validate.php';
+
+if(!validate()){
+  header("Location: ../index.php");
+}
+?>
 <DOCTYPE html>
 
 <html lang=en>
@@ -11,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href ="../css/materialize.css"/>
 <link rel="stylesheet" type="text/css" href ="../css/styl.css"/>
 <script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cookiejs.js"></script>
 <script type="text/javascript" src="../js/materialize.js"></script>
 
 <body>
@@ -21,7 +29,7 @@
 <ul id="UserName" class="dropdown-content">
   <li><a href="#!">Profile</a></li>
   <li class="divider"></li>
-  <li><a href="#!">Logout</a></li>
+  <li><a id="logoutuser">Logout</a></li>
   </ul>
 
   <!-- Dropdown NOtifications -->
@@ -30,13 +38,13 @@
   <li><a href="#!">one</a></li>
   <li class="divider"></li>
   <li><a href="#!">two</a></li>
-  
+
 </ul>
 <ul id="NotificationsSmall" class="dropdown-content">
   <li><a href="#!">one</a></li>
   <li class="divider"></li>
   <li><a href="#!">two</a></li>
-  
+
 </ul>
 <nav class="cyan darken-3" >
   <div class="row">
@@ -50,7 +58,7 @@
     </div>
     <!-- Side Navigation for small screen -->
 		  <ul id="slide-out" class="side-nav hide-on-med-and-up">
-		    <li><div class="userView"> 
+		    <li><div class="userView">
 		      <div class="background ">
 		        <img src="../sources/images/logos/profile_bg.png">
 		      </div>
@@ -63,33 +71,54 @@
 		  	  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
 		   	  <li><a href="#!">Second Link</a></li>
 		      <li><div class="divider"></div></li>
-		      
+
 		      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
 		  </ul>
 		  <div class="">
 		  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 			</div>
 	  </div>
-  
+
 </nav>
 
 
 
-      
+
 
         <script>
  $(document).ready(function(){
   $(".button-collapse").sideNav();
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
+  $('.dropdown-button').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: true, // Does not change width of dropdown to that of the activator
+        hover: false, // Activate on hover
+        gutter: 0, // Spacing from edge
+        belowOrigin: true, // Displays dropdown below the button
+        alignment: 'left', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+      }
+    );
+
+    $("#logoutuser").click(function() {
+      var x=Cookies.get("userid");
+      $.post("logout.php",{id:x},function(data){
+        if(data==1){
+          window.open("../index.php","_self");
+        }
+      });
+    });
+
 });
 </script>
 
-        <script>
+        <!-- <script>
          $(document).ready(function(){
            $(".dropdown-button").dropdown();
            });
-              </script>
+              </script> -->
 
   </body>
 
