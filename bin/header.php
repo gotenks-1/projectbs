@@ -72,7 +72,7 @@ if(!validate()){
 		   	  <li><a href="#!">Second Link</a></li>
 		      <li><div class="divider"></div></li>
 
-		      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+		      <li><a id="mobile-logout" class="waves-effect" href="#!">Logout</a></li>
 		  </ul>
 		  <div class="">
 		  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -86,39 +86,42 @@ if(!validate()){
 
 
         <script>
- $(document).ready(function(){
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
-  $('.dropdown-button').dropdown({
-        inDuration: 300,
-        outDuration: 225,
-        constrainWidth: true, // Does not change width of dropdown to that of the activator
-        hover: false, // Activate on hover
-        gutter: 0, // Spacing from edge
-        belowOrigin: true, // Displays dropdown below the button
-        alignment: 'left', // Displays dropdown with edge aligned to the left of button
-        stopPropagation: false // Stops event propagation
-      }
-    );
+             $(document).ready(function(){
+              $(".button-collapse").sideNav();
+              // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+              //$('.collapsible').collapsible();
+              $('.dropdown-button').dropdown({
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrainWidth: true, // Does not change width of dropdown to that of the activator
+                    hover: false, // Activate on hover
+                    gutter: 0, // Spacing from edge
+                    belowOrigin: true, // Displays dropdown below the button
+                    alignment: 'left', // Displays dropdown with edge aligned to the left of button
+                    stopPropagation: false // Stops event propagation
+                  }
+                );
 
-    $("#logoutuser").click(function() {
-      var x=Cookies.get("userid");
-      $.post("logout.php",{id:x},function(data){
-        if(data==1){
-          window.open("../index.php","_self");
-        }
-      });
-    });
+                $("#mobile-logout").click(function() {
+                  var x=Cookies.get("userid");
+                  $.post("logout.php",{id:x},function(data){
+                    if(data==1){
+                      window.open("../index.php","_self");
+                    }
+                  });
+                });
 
-});
-</script>
+                $("#logoutuser").click(function() {
+                  var x=Cookies.get("userid");
+                  $.post("logout.php",{id:x},function(data){
+                    if(data==1){
+                      window.open("../index.php","_self");
+                    }
+                  });
+                });
 
-        <!-- <script>
-         $(document).ready(function(){
-           $(".dropdown-button").dropdown();
-           });
-              </script> -->
+            });
+        </script>
 
   </body>
 
