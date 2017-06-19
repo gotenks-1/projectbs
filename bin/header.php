@@ -1,9 +1,15 @@
 <?php
 include 'validate.php';
-
+include 'dbconn.php';
 if(!validate()){
   header("Location: ../index.php");
 }
+
+$qry="select * from LoginDetail where userid='".$_COOKIE["userid"]."'";
+$rs=$conn->query($qry);
+$r=$rs->fetch_assoc();
+$uname=$r["userid"];
+
 ?>
 <DOCTYPE html>
 
@@ -53,7 +59,7 @@ if(!validate()){
    		  <a href="#!" class="brand-logo right hide-on-med-and-up"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
        <ul class="right ">
           <li class=""><a class="dropdown-button " href="#!" data-activates="Notificationslarge"><span class="hide-on-small-only">Notifications</span><i class="material-icons right hide-on-small-only">add_alert</i></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="UserName"><span class="hide-on-small-only">UserName</span><i class="material-icons right hide-on-small-only">perm_identity</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="UserName"><span class="hide-on-small-only"><?php echo $uname; ?></span><i class="material-icons right hide-on-small-only">perm_identity</i></a></li>
        </ul>
     </div>
     <!-- Side Navigation for small screen -->
@@ -63,7 +69,7 @@ if(!validate()){
 		        <img src="../sources/images/logos/profile_bg.png">
 		      </div>
 		      <a href="#!user"><img class="circle" src="../sources/images/logos/logoiimt.png" alt="Profile"></a>
-		      <a href="#!name"><span class="white-text name">User Name</span></a>
+		      <a href="#!name"><span class="white-text name"><?php echo $uname; ?></span></a>
 		      <a href="#!email"><span class="white-text email">abc@gmail.com</span></a>
 		    </div></li>
 		  	  <li class=""><a class="dropdown-button " href="#!" data-activates="NotificationsSmall
