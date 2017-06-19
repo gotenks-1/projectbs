@@ -1,7 +1,11 @@
 <?php
 session_start();
 
+
+if(isset($_POST["userid"])&&isset($_POST["pass"]))
+{
 include 'dbconn.php';
+
 
 $userid=$_POST["userid"];
 $pass=$_POST["pass"];
@@ -22,6 +26,7 @@ if(mysqli_num_rows($rs)>0){
     $conn->query($qry);
 
     setcookie("userid",$userid,time()+86400*30,"/");
+    setcookie("PHPSESSID",session_id(),time()+86400*30,"/");
     echo "success";
 
   }
@@ -35,5 +40,9 @@ if(mysqli_num_rows($rs)>0){
 else {
   session_destroy();
   echo "failed";
+}
+}
+else {
+  header("Location: ../index.php");
 }
  ?>
