@@ -19,9 +19,9 @@ if(validate()){
     <script type="text/javascript" src="js/materialize.js"></script>
   </head>
 
-  <body class="cyan loaded" style="display:flex;align-items:center">
+  <body class="cyan" style="display:flex;align-items:center">
 
-    <div class="container row" >
+    <div class="container row">
 
       <div class="col s12 m6 l4 offset-m3 offset-l4">
 
@@ -33,6 +33,12 @@ if(validate()){
             <li class="tab col s6"><a href="#login-page">Login</a></li>
             <li class="tab col s6"><a href="#register-page">Register</a></li>
           </ul>
+        </div>
+
+        <div id="loadbar" class="row" style="margin-bottom:0px">
+            <div class="progress" style="margin-bottom:0px;margin-top:0px">
+              <div class="indeterminate"></div>
+            </div>
         </div>
 
         <div class="row" id="register-page">
@@ -155,6 +161,7 @@ if(validate()){
 
         $(document).ready(function() {
 
+          $("#loadbar").hide();
           $("#submit_button").click(function(){
 
             // var usrid=$("#first_name").val();
@@ -175,6 +182,9 @@ if(validate()){
           });
 
           $("#register_button").click(function() {
+
+              $("#loadbar").show();
+              $("#register_button").addClass('disabled');
               $.post('bin/registervalidate.php',{
               fname:$("#register_first_name").val(),
               lname:$("#register_last_name").val(),
@@ -182,6 +192,8 @@ if(validate()){
               email:$("#register_email").val(),
               rpass:$("#register_pass").val()
             }, function(data) {
+              $("#loadbar").hide();
+              $("#register_button").removeClass('disabled');
               if(data=="error:0"){
                 alert("Username already exists!!Choose another.");
               }
@@ -192,7 +204,7 @@ if(validate()){
                 window.open("bin/confirmcode.php?email="+$("#register_email").val(),"_self");
               }
               else{
-                alert("Something went wrong.Please refresh your browser and try again");
+                alert(data);
               }
             });
 

@@ -40,6 +40,7 @@ if(mysqli_num_rows($rs)==1){
   else {
     echo "error:2";
   }
+  exit(0);
 }
 else {
   $qry="select * from TempAccount where userid='$ruserid'";

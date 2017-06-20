@@ -27,8 +27,8 @@ function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountus
   // $mail->SMTPDebug = 2;                                  // Set mailer to use SMTP
   $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
   $mail->SMTPAuth = true;                               // Enable SMTP authentication
-  $mail->Username = ;                 // SMTP username
-  $mail->Password =  ;                          // SMTP password
+  $mail->Username = '';                 // SMTP username
+  $mail->Password =  '';                          // SMTP password
   $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
   $mail->Port = 587;                                    // TCP port to connect to
 
@@ -46,7 +46,7 @@ function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountus
   $mail->Subject = $sendtomailsubject;
   $bodymessage="";
   if($typeofmail==1){
-    $bodymessage="We have received your request your accout creation with following info.<br>Username:- $accountusername<br>Password: $accountpass";
+    $bodymessage="We have received your request for accout creation with following info.<br>Username:- $accountusername<br>Password: $accountpass";
     $bodymessage=$bodymessage."<br>Enter the following code to complete sign up process.<br>";
     $xyz=generaterandomstring(20);
     $bodymessage=$bodymessage."".$xyz;
@@ -59,7 +59,7 @@ function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountus
     elseif ($typeofmail==2) {
       # code...
       include "dbconn.php";
-      $qry="select * from TempAccount where userid='$accountusername'";
+      $qry="select * from TempAccount where email='$sendtomailaddress'";
       $rs=$conn->query($qry);
       $r=$rs->fetch_assoc();
 

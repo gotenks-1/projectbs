@@ -49,6 +49,7 @@
                 if(data==1)
                 {
                   alert("Password sent successfully to your email");
+                  window.open("../index.php","_self");
                 }
                 else {
                   alert("Enter valid UserID");
