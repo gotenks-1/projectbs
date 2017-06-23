@@ -28,6 +28,10 @@ include 'dbconn.php';
 			 if(mysqli_query($conn,$query))
 			 {				 	
 	 		
+			 	echo	'<script type="text/javascript">';
+			 	echo    'alert("ankit)';
+				echo    '</script>';
+
 	 			header("Location: ../index.php");
 
 			 }
@@ -54,7 +58,7 @@ include 'dbconn.php';
 <link rel="stylesheet" type="text/css" href ="../css/styl.css"/>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cookiejs.js"></script>
-<script type="text/javascript" src="../js/materialize.js"></script>
+<script type="text/javascript" src="../js/materialize.js"> </script>
  
 
  <body>
@@ -84,6 +88,8 @@ include 'dbconn.php';
 	    </form>
 	  </div>
  </div>
+
 </body>
+
 
 </html>

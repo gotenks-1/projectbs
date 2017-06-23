@@ -1,9 +1,23 @@
 <?php
 include 'validate.php';
+include 'dbconn.php';
 
-if(!validate()){
-  header("Location: ../index.php");
-}
+      if(!validate()){
+        header("Location: ../index.php");
+      }
+
+      if(isset($_COOKIE['userid']))
+        {
+             $query= "SELECT type From logindetail Where userid='".$_COOKIE['userid']."'";
+
+            $result=mysqli_query($conn,$query);
+
+           $dbarray = mysqli_fetch_object($result);
+        
+           $val=$dbarray->type;
+          
+           Mysqli_free_result($result);
+        }
 ?>
 <DOCTYPE html>
 
@@ -20,7 +34,6 @@ if(!validate()){
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cookiejs.js"></script>
 <script type="text/javascript" src="../js/materialize.js"></script>
-
 <body >
 
 
@@ -71,7 +84,16 @@ if(!validate()){
 				  	  <li class="">
 				  	  <a class="dropdown-button " href="#!" data-activates="NotificationsSmall"><i class="material-icons">add_alert</i>Notifications</a></li>
 				  	  <li><a href="#!">INVITES</a></li>
-				   	  <li><a href="#!">SOMETHING</a></li>
+				   	  <li><?php if($val!="normal")
+                        { 
+                        echo '<a href="showquery.php">QUERY</a>';
+                        }
+                        else
+                        {
+                         echo '<a href="querypage.php">QUERY</a>'; 
+                        }
+                    ?>
+              </li>
 				      <li><div class="divider"></div></li>
 
 				      <li><a id="mobile-logout" class="waves-effect" href="#!">Logout</a></li>
@@ -89,7 +111,15 @@ if(!validate()){
 		           	<a href="#" class="waves-effect btn-flat white-text">Invites</a>
 		        </div>
       			<div class="card-action">
-		     		<a href="#" class="waves-effect btn-flat white-text">Invites</a>
+		     		      <?php if($val!="normal")
+                        { 
+                        echo '<a href="showquery.php" class="waves-effect btn-flat white-text">QUERY</a>';
+                        }
+                        else
+                        {
+                         echo '<a href="querypage.php" class="waves-effect btn-flat white-text">QUERY</a>'; 
+                        }
+                    ?>
         		</div>
             </div>
           </div>
