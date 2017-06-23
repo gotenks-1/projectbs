@@ -6,7 +6,7 @@ include 'dbconn.php';
 	}
     if(isset($_COOKIE['userid']))
 	{
-	     $query= "SELECT * From queries ";
+	     $query= "SELECT * From queries ORDER BY querydate DESC";
 
 		 $result=mysqli_query($conn,$query);
 
@@ -50,7 +50,7 @@ include 'dbconn.php';
 			        		<a href="#!" class="secondary-content"><i class="material-icons">replay</i></a>
 			        	</div>
 			        <div style="font-style:italic;">
-			        	<?php echo 'Submitted by '.$data['userid']; ?>
+			        	<?php echo 'Submitted by '.$data['userid']. ' on '.$data['querydate']; ?>
 			        </div>
 			        </li>
                     <?php endforeach; ?>
