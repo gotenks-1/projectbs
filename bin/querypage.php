@@ -21,9 +21,10 @@ include 'dbconn.php';
 		 if(isset($_POST['submit_btn']) && $val=="normal")
 		 {
 			 $qu_txt= mysqli_real_escape_string($conn,$_POST['qu_txt']);
+			 $subject= mysqli_real_escape_string($conn,$_POST['subject']);
 			 $userid =$_COOKIE['userid'];
 
-			 $query= "INSERT INTO Queries(userid,query) Values('$userid','$qu_txt')";
+			 $query= "INSERT INTO Queries(userid,subject,query) Values('$userid','$subject','$qu_txt')";
 
 			 if(mysqli_query($conn,$query))
 			 {				 	
@@ -69,6 +70,10 @@ include 'dbconn.php';
 	  <div class="">
 	    <form class="col s12" method="POST" action="<?php $_SERVER['PHP_SELF'];?>" >
  	      <div class="row">
+	        <div class="input-field col s12">
+         	   <input id="input_text" type="text" name='subject' data-length="150">
+            <label for="Subject">Subject</label>
+          </div>
 	        <div class="input-field col s12">
 	          <textarea id="textarea1" name='qu_txt' class="materialize-textarea"></textarea>
 	          <label for=query>Query</label>

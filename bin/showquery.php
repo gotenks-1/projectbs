@@ -45,7 +45,10 @@ include 'dbconn.php';
 			  	 <ul class="collection with-header">
 			        <?php foreach($dbarray as $data) : ?>
 			        <li class="collection-item" >
-			        	<div style="font-weight:bold;">
+			        	<div class="cyan-text" style="font-weight:bold; font-style:italic;" >
+			        		<h5><?php echo $data['subject'].': '; ?><h5>
+			        	</div>
+			        	<div class="" style="font-weight:bold;">
 			        		<p><?php echo $data['query']; ?></p>
 			        		<a href="#!" class="secondary-content"><i class="material-icons">replay</i></a>
 			        	</div>
