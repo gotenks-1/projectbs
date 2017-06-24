@@ -13,6 +13,50 @@ if(!validate()){
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+  <style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content1 {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+ 
+
 </head>
 
 <link rel="stylesheet" type="text/css" href ="../css/materialize.css"/>
@@ -34,9 +78,10 @@ if(!validate()){
   <!-- Dropdown NOtifications -->
 
 <ul id="Notificationslarge" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">two</a></li>
+  <li class="card-panel"><a href="#!">one</a></li>
+  
+  <li class="card-panel"><a href="#!">two</a></li>
+  
 
 </ul>
 <ul id="NotificationsSmall" class="dropdown-content">
@@ -52,7 +97,7 @@ if(!validate()){
 		 		  <a href="#!" class="brand-logo left hide-on-small-only"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
 		   		  <a href="#!" class="brand-logo right hide-on-med-and-up"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
 		       <ul class="right">
-		          <li class=""><a class="dropdown-button " href="#!" data-activates="Notificationslarge"><span class="hide-on-small-only">Notifications</span><i class="material-icons right hide-on-small-only">add_alert</i></a></li>
+		          <li style="width: 400px;"><a class="dropdown-button " href="#!" data-activates="Notificationslarge"><span class="hide-on-small-only">Notifications</span><i class="material-icons right hide-on-small-only">add_alert</i></a></li>
 		          <li><a class="dropdown-button" href="#!" data-activates="UserName"><span class="hide-on-small-only">UserName</span><i class="material-icons right hide-on-small-only">perm_identity</i></a></li>
 		       </ul>
 		    </div>

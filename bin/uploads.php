@@ -20,7 +20,7 @@
       }
       
       if(empty($errors)==true){
-         move_uploaded_file($file_tmp,"../sources/images/dp/".$file_name);
+         move_uploaded_file($file_tmp,"../sources/images/dp/".$file GH_name);
          echo $file_tmp."<br>";
          echo $file_name;
          echo "Success";
