@@ -103,33 +103,43 @@ include 'dbconn.php';
   <li><a href="#!">two</a></li>
 </ul>
 
+<!-- Dropdown Invites -->
+<ul id='invites_large_admin' class='dropdown-content'>
+    <li><a href="sendinvites.php">Send Invites</a></li>
+    <li><a href="#!">Accepted Invites</a></li>
+</ul>
+
 <div class="row l1">
-	<nav class="cyan darken-3" >
-		  <div class="row" style="margin-bottom:0px;">
-		   <div>
-		 		  <a href="#!" class="brand-logo left hide-on-small-only"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
-		   		  <a href="#!" class="brand-logo right hide-on-med-and-up"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
-		       <ul class="right">
-		          <li style="width: 400px;"><a class="dropdown-button " href="#!" data-activates="Notificationslarge"><span class="hide-on-small-only">Notifications</span><i class="material-icons right hide-on-small-only">add_alert</i></a></li>
-		          <li><a class="dropdown-button" href="#!" data-activates="UserName"><span class="hide-on-small-only">UserName</span><i class="material-icons right hide-on-small-only">perm_identity</i></a></li>
-		       </ul>
-		    </div>
-		    <!-- Side Navigation for small screen -->
-				  <ul id="slide-out" class="side-nav hide-on-med-and-up">
-				    <li><div class="userView">
-				     	 <div class="background ">
-				        	<img src="../sources/images/logos/profile_bg.png">
-				      	 </div>
-				      		<a href="#!user"><img class="circle" src="../sources/images/logos/logoiimt.png" alt="Profile"></a>
-				      		<a href="#!name"><span class="white-text name">User Name</span></a>
-				      		<a href="#!email"><span class="white-text email">abc@gmail.com</span></a>
-				        </div>
-				    </li>
-				  	  
-				  	  <li class="">
-				  	  <a class="dropdown-button " href="#!" data-activates="NotificationsSmall"><i class="material-icons">add_alert</i>Notifications</a></li>
-				  	  <li><a href="#!">INVITES</a></li>
-				   	  <li><?php if($val!="normal")
+  <nav class="cyan darken-3" >
+      <div class="row" style="margin-bottom:0px;">
+       <div>
+          <a href="#!" class="brand-logo left hide-on-small-only"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
+            <a href="#!" class="brand-logo right hide-on-med-and-up"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
+           <ul class="right">
+              <li style="width: 400px;"><a class="dropdown-button " href="#!" data-activates="Notificationslarge"><span class="hide-on-small-only">Notifications</span><i class="material-icons right hide-on-small-only">add_alert</i></a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="UserName"><span class="hide-on-small-only">UserName</span><i class="material-icons right hide-on-small-only">perm_identity</i></a></li>
+           </ul>
+        </div>
+        
+        <!-- Side Navigation for small screen -->
+          <ul id="slide-out" class="side-nav hide-on-med-and-up">
+            <li><div class="userView">
+               <div class="background ">
+                  <img src="../sources/images/logos/profile_bg.png">
+                 </div>
+                  <a href="#!user"><img class="circle" src="../sources/images/logos/logoiimt.png" alt="Profile"></a>
+                  <a href="#!name"><span class="white-text name">User Name</span></a>
+                  <a href="#!email"><span class="white-text email">abc@gmail.com</span></a>
+                </div>
+            </li>
+              
+              <li>
+              <a class="dropdown-button" href="#!" data-activates="NotificationsSmall">Notifications</a>
+              </li>
+              
+              <li><a href="#!">INVITES</a></li>
+              
+              <li><?php if($val!="normal")
                         { 
                         echo '<a href="showquery.php">QUERY</a>';
                         }
@@ -139,37 +149,48 @@ include 'dbconn.php';
                         }
                     ?>
               </li>
-				      <li><div class="divider"></div></li>
+              <li><div class="divider"></div></li>
 
-				      <li><a id="mobile-logout" class="waves-effect" href="#!">Logout</a></li>
-				  </ul>
-				  <div class="">
-				  		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-				  </div>
-			  </div>
-		</nav>
-	 <div class="row hide-on-small-only">
-       <div class="col l2 w3-container" style="background:#00838f; height: 100%;">
-       	   <div class="card cyan darken-2" style="height: 100%;">
-            <div class="card-content white-text">
-           		<div class="card-action">
-		           	<a href="#" class="waves-effect btn-flat white-text">Invites</a>
-		        </div>
-      			<div class="card-action">
-		     		      <?php if($val!="normal")
-                        { 
-                        echo '<a href="showquery.php" class="waves-effect btn-flat white-text">QUERY</a>';
-                        }
-                        else
-                        {
-                         echo '<a href="querypage.php" class="waves-effect btn-flat white-text">QUERY</a>'; 
-                        }
-                    ?>
-        		</div>
+              <li><a id="mobile-logout" class="waves-effect" href="#!">Logout</a></li>
+          </ul>
+          <div class="">
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          </div>
+        </div>
+    </nav>
+   <div class="row hide-on-small-only">
+       <div class="col l2" style="background:#00838f; height: 100%;">
+           <div class="card cyan darken-2" style="height: 100%;">
+                <div class="collection with-header">
+                <ul>
+                 <li class="collection-item"> <?php if($val!="normal")
+                            { 
+                            echo '<a class="dropdown-button collection-item" href="#!" data-activates="invites_large_admin"><span class="cyan-text darken-3">INVITES</span></a>';
+                            }
+                            else
+                            {
+                             echo '<a href="#!" class="collection-item">INVITES</a>'; 
+                            } 
+                            ?>
+                         </li>
+                     
+                  <li class="collection-item"><?php if($val!="normal")
+                            { 
+                            echo '<a href="showquery.php" class="collection-item">QUERY</a>';
+                            }
+                            else
+                            {
+                             echo '<a href="querypage.php" class="collection-item">QUERY</a>'; 
+                            } 
+                            ?>
+                         </li>
+                    </ul>
+            </div>
             </div>
           </div>
         </div>
- 	</div>
+ </div>
+
 
 
 
