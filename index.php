@@ -1,9 +1,19 @@
-<?php
+ <?php
 include 'bin/validate.php';
 
-if(validate()){
+  if(validate())
+  {
   header("Location: bin/header.php");
-}
+  }
+
+  if(filter_has_var(INPUT_POST, 'register_button'))
+  {
+      echo'success';
+  }
+  else
+  {
+    echo 'go get a life';
+  }
 
 ?>
 <html>
@@ -44,7 +54,7 @@ if(validate()){
         <div class="row" id="register-page">
           <!-- start register page -->
             <div class="col s12 white z-depth-4">
-              <form class="login-form">
+              <form class="login-form" method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
 
                 <div class="row">
                   <div class="input-field col s12 center">
@@ -76,6 +86,22 @@ if(validate()){
                     <label for="register_userid">Username</label>
                   </div>
                 </div>
+
+                <div class="row" style="margin-bottom:0px;">
+                 <div class="input-field col s12" style="">
+   				 	<i class="material-icons prefix">view_list</i>
+   				 	<select id="course" style="max-height:10px; overflow-y:scroll !important;">
+				      <option value="" disabled selected>Select Course</option>
+				      <option value="1">B.Tech</option>
+				      <option value="2">B.C.A</option>
+				      <option value="3">B.B.A</option>
+				      <option value="4">M.C.A</option>
+				      <option value="5">M.B.A</option>
+				    </select>
+				    <label>Course</label>
+				  </div>
+                </div>
+                
 
                 <div class="row" style="margin-bottom:0px">
                   <div class="input-field col s12" style="margin-top:0px">
@@ -213,8 +239,11 @@ if(validate()){
           $("#forgot-msg").click(function() {
             window.open("bin/forgetpassword.php","_self");
           });
+			 });
 
-          });
+        $(document).ready(function() {
+  		  $('select').material_select();
+  			});
 
 
 
