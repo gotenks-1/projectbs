@@ -6,15 +6,6 @@ include 'bin/validate.php';
   header("Location: bin/header.php");
   }
 
-  if(filter_has_var(INPUT_POST, 'register_button'))
-  {
-      echo'success';
-  }
-  else
-  {
-    echo 'go get a life';
-  }
-
 ?>
 <html>
   <head>
@@ -92,16 +83,17 @@ include 'bin/validate.php';
    				 	<i class="material-icons prefix">view_list</i>
    				 	<select id="course" style="max-height:10px; overflow-y:scroll !important;">
 				      <option value="" disabled selected>Select Course</option>
-				      <option value="1">B.Tech</option>
-				      <option value="2">B.C.A</option>
-				      <option value="3">B.B.A</option>
-				      <option value="4">M.C.A</option>
-				      <option value="5">M.B.A</option>
+				      <option value="btech">B.Tech</option>
+				      <option value="btechl">B.Tech(Lateral)</option>
+				      <option value="bca">B.C.A</option>
+				      <option value="mca">M.C.A</option>
+              <option value="bpharma">B.Pharma.</option>
+				      <option value="polytech">PolyTech.</option>
 				    </select>
 				    <label>Course</label>
 				  </div>
                 </div>
-                
+
 
                 <div class="row" style="margin-bottom:0px">
                   <div class="input-field col s12" style="margin-top:0px">
@@ -216,7 +208,8 @@ include 'bin/validate.php';
               lname:$("#register_last_name").val(),
               ruserid:$("#register_userid").val(),
               email:$("#register_email").val(),
-              rpass:$("#register_pass").val()
+              rpass:$("#register_pass").val(),
+              branch:$("#course").val()
             }, function(data) {
               $("#loadbar").hide();
               $("#register_button").removeClass('disabled');

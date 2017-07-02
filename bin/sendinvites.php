@@ -1,9 +1,9 @@
-<DOCTYPE html>
+<!-- <DOCTYPE html>
 
 <html lang=en>
 
 <head>
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 </head>
@@ -13,10 +13,10 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cookiejs.js"></script>
 <script type="text/javascript" src="../js/materialize.js"> </script>
- 
 
- <body>
-  <div class="container">
+
+ <body> -->
+  <!-- <div class="container"> -->
   		<!-- <div class="card-panel teal lighten-2"> -->
 
   	  <h5 class="card-panel teal lighten-2" style="color:white">SEND INVITES</h5>
@@ -41,7 +41,7 @@
  	      	 </div>
          </div>
 		<!-- other details block -->
-        
+
          <div>
  	      	 <h5>Other Details:</h5>
  	      	 <div>
@@ -85,9 +85,9 @@
          </div>
  	  	</form>
 	  </div>
- </div>
+ <!-- </div> -->
 
-</body>
+<!-- </body> -->
 
 <script>
 	 $(document).ready(function(){
@@ -116,7 +116,7 @@
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
-	
+
   $('.timepicker').pickatime({
     default: 'now', // Set default time
     fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
@@ -126,15 +126,12 @@
     canceltext: 'Cancel', // Text for cancel-button
     autoclose: false, // automatic close timepicker
     ampmclickable: true, // make AM PM clickable
-    aftershow: function(){} //Function for after opening timepicker  
+    aftershow: function(){} //Function for after opening timepicker
   });
 
    });
 
- 
+
 
 </script>
-
-
-
-</html>
+<!-- </html> -->

@@ -1,10 +1,11 @@
 <?php
 
 // var_dump($_POST);
-if(isset($_POST["fname"])&&isset($_POST["lname"])&&isset($_POST["ruserid"])&&isset($_POST["email"])&&isset($_POST["rpass"]))
+if(isset($_POST["fname"])&&isset($_POST["lname"])&&isset($_POST["ruserid"])&&isset($_POST["email"])&&isset($_POST["rpass"])&&isset($_POST["branch"]))
 {
 include 'dbconn.php';
 
+$rbranch=$_POST["branch"];
 $rfname=$_POST["fname"];
 $rlname=$_POST["lname"];
 $ruserid=$_POST["ruserid"];
@@ -34,7 +35,7 @@ include 'samplemail.php';
 $qry="select * from TempAccount where email='$remail'";
 $rs=$conn->query($qry);
 if(mysqli_num_rows($rs)==1){
-  if(sendmailto($remail,"Register Account on IIMT placementdrive",2,$ruserid,$rpass,$rfname,$rlname)){
+  if(sendmailto($remail,"Register Account on IIMT placementdrive",2,$ruserid,$rpass,$rfname,$rlname,$rbranch)){
     echo "success";
   }
   else {
@@ -51,7 +52,7 @@ else {
   }
 }
 
-if(sendmailto($remail,"Register Account on IIMT placementdrive",1,$ruserid,$rpass,$rfname,$rlname)){
+if(sendmailto($remail,"Register Account on IIMT placementdrive",1,$ruserid,$rpass,$rfname,$rlname,$rbranch)){
   echo "success";
 }
 else {

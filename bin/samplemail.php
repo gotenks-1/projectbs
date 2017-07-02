@@ -17,7 +17,7 @@ function generaterandomstring($length){
   return $string;
 }
 
-function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountusername,$accountpass,$accountfname,$accountlname){
+function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountusername,$accountpass,$accountfname,$accountlname,$branch){
 
   $mail = new PHPMailer;
 
@@ -27,8 +27,8 @@ function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountus
   // $mail->SMTPDebug = 2;                                  // Set mailer to use SMTP
   $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
   $mail->SMTPAuth = true;                               // Enable SMTP authentication
-  $mail->Username = '';                 // SMTP username
-  $mail->Password =  '';                          // SMTP password
+  $mail->Username = 'sandeepbj12345@gmail.com';                 // SMTP username
+  $mail->Password =  'SandY3701';                          // SMTP password
   $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
   $mail->Port = 587;                                    // TCP port to connect to
 
@@ -53,7 +53,8 @@ function sendmailto($sendtomailaddress,$sendtomailsubject,$typeofmail,$accountus
 
     include "dbconn.php";
 
-    $qry="insert into TempAccount values('$accountusername','$accountfname','$accountlname','$sendtomailaddress','$accountpass','$xyz')";
+    $qry="insert into TempAccount values('$accountusername','$accountfname','$accountlname','$sendtomailaddress','$branch','$accountpass','$xyz')";
+    // echo "console.log(".$qry.");";
     $conn->query($qry);
 }
     elseif ($typeofmail==2) {

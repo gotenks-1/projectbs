@@ -6,6 +6,7 @@ if(isset($_GET["email"])){
     $qry="select * from TempAccount where email='$email'";
     $rs=$conn->query($qry);
     if(mysqli_num_rows($rs)!=1){
+      
       header("Location: ../index.php");
     }
 }

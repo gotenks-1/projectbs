@@ -13,8 +13,16 @@ if(isset($_POST["uemail"])&&isset($_POST["ucode"])){
     $r=$rs->fetch_assoc();
     $id=$r["userid"];
     $pass=$r["pass"];
-    $qry1="insert into LoginDetail values('$id','$email','$pass','normal')";
+    $branch=$r["branch"];
+    $fname=$r["fname"];
+    $lname=$r["lname"];
+
+    $qry1="insert into LoginDetail values('$id','$email','$pass','normal','$branch')";
     $conn->query($qry1);
+
+    $qry1="insert into $branch(`userid`,`fname`,`lname`,`email`) values('$id','$fname','$lname','$email')";
+    $conn->query($qry1);
+
 
     $qry1="delete from TempAccount where email='$email'";
     $conn->query($qry1);
