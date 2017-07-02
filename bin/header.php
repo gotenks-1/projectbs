@@ -33,13 +33,13 @@ include 'dbconn.php';
                 <a href="#!" class="brand-logo right hide-on-large-only"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
 
                  <div class="hide-on-large-only left">
-                   <a class="button-collapse waves-effect waves-light left" href="#!" data-activates="slide-out">
+                   <a class="button-collapse waves-effect waves-light left" href="#!" data-activates="slide-out" id="sidenavshow">
                    <i class="material-icons left">menu</i></a>
                 </div>
 
                 <div class="hide-on-med-and-down right" style="margin-right:20px">
                     <span>Welcome</span>
-                    <a href="#" class="profilepage"><?php echo $_SESSION["userid"];?></a>
+                    <a href="#" class="profilepage"><?php echo $_SESSION["userid"];?> !</a>
                 </div>
 
             </div>
@@ -60,21 +60,22 @@ include 'dbconn.php';
       	                  <a href="#!email" class="profilepage"><span class="white-text email"><?php echo $_SESSION["email"];?></span></a>
       	                </div>
       	            </li>
-                    <li><a href="#!">Notifications</a></li>
-       				      <li><div class="divider"></div></li>
-      	            <li><a href="#!" class="collection-item">INVITES</a></li>
+                    <?php
+                        include 'dbconn.php';
+                        $qry="select * from `rights` where `user`='".$_SESSION["type"]."'";
+                        $rs=$conn->query($qry);
+                        foreach ($rs as $r):
+                    ?>
+                    <li><a href="#!" class="adminpanel" data-value="<?php echo $r['rightuse'];?>"><span><?php echo $r["rightdisplay"];?></span></a></li>
                     <li><div class="divider"></div></li>
-                    <li><a href="#!">Accepted Invites</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a href="showquery.php">Query</a></li>
-                		<li><div class="divider"></div></li>
+                    <?php endforeach;?>
                 		<li><a class="waves-effect" href="#!" id="mobile-logout">Logout</a></li>
                 		<li><div class="divider"></div></li>
               </ul>
 
           <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
 
-          <div id="maincontainer" style="flex-grow:1">
+          <div id="maincontainer" style="flex-grow:1;margin-left:10px" class="z-depth-3">
 
             this is main container
 
@@ -89,14 +90,16 @@ include 'dbconn.php';
              $(document).ready(function(){
 
                //main contioner load
-               $("#maincontainer").load("sendinvites.php");
-
+              //  $("#maincontainer").load("sendinvites.php");
 
                $(".profilepage").click(function() {
                  /* Act on the event */
-                 $("#maincontainer").html("this is profile page");
+                 $("#maincontainer").load("userprofile.php");
                });
 
+               $(".adminpanel").click(function() {
+                $("#maincontainer").html("This is "+$(this).data("value")+".php Page");
+               });
 
               $(".button-collapse").sideNav();
               // Initialize collapsible (uncomment the line below if you use the dropdown variation)

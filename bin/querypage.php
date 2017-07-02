@@ -1,23 +1,23 @@
-<?php 
+<?php
 include 'validate.php';
 include 'dbconn.php';
 
 	if(!validate()){
 	  header("Location: ../index.php");
 	}
-	
+
 	if(isset($_COOKIE['userid']))
 	{
-		   $query= "SELECT type From logindetail Where userid='".$_COOKIE['userid']."'";
+		   $query= "SELECT type From LoginDetail Where userid='".$_COOKIE['userid']."'";
 
 		  $result=mysqli_query($conn,$query);
 
 		 $dbarray = mysqli_fetch_object($result);
-	
+
 		 $val=$dbarray->type;
-		
+
 		 Mysqli_free_result($result);
- 
+
 		 if(isset($_POST['submit_btn']) && $val=="normal")
 		 {
 			 $qu_txt= mysqli_real_escape_string($conn,$_POST['qu_txt']);
@@ -27,8 +27,8 @@ include 'dbconn.php';
 			 $query= "INSERT INTO Queries(userid,subject,query) Values('$userid','$subject','$qu_txt')";
 
 			 if(mysqli_query($conn,$query))
-			 {				 	
-	 		
+			 {
+
 			 	echo	'<script type="text/javascript">';
 			 	echo    'alert("ankit)';
 				echo    '</script>';
@@ -41,7 +41,7 @@ include 'dbconn.php';
 			 	echo 'ERROR:'.mysqli_error($conn);
 			 }
 		 }
-		  
+
 	}
 ?>
 
@@ -60,7 +60,7 @@ include 'dbconn.php';
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cookiejs.js"></script>
 <script type="text/javascript" src="../js/materialize.js"> </script>
- 
+
 
  <body>
   <div class="container">
