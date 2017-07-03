@@ -45,13 +45,13 @@ include 'dbconn.php';
 	}
 ?>
 
-<DOCTYPE html>
+<!-- <DOCTYPE html>
 
 <html lang=en>
 
-<head>
+<head> -->
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 </head>
 
@@ -63,7 +63,7 @@ include 'dbconn.php';
 
 
  <body>
-  <div class="container">
+  <div class="container"> -->
   		<!-- <div class="card-panel teal lighten-2"> -->
 
   		<h5 class="card-panel teal lighten-2" style="color:white">QUERY</h5>
@@ -94,7 +94,7 @@ include 'dbconn.php';
 	  </div>
  </div>
 
-</body>
+<!-- </body>
 
 
-</html>
+</html> -->

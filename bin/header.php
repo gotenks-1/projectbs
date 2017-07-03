@@ -50,7 +50,7 @@ include 'dbconn.php';
         <!-- SIDE NAV MENU (BOTH SMALL AND LARGE) -->
 
               <ul id="slide-out" class="side-nav fixed leftside-navigation" style="position:relative; height:100vh; overflow-y:inherit;box-shadow:0 0 0 0">
-      	            <!-- <li class="user-details cyan darken-2"> -->
+      	            <!-- <li class="user-details cyan darken -2"> -->
       	            <li><div class="userView">
       	               <div class="background ">
       	                  <img src="../sources/images/logos/user-bg.jpg">
@@ -75,7 +75,7 @@ include 'dbconn.php';
 
           <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
 
-          <div id="maincontainer" style="flex-grow:1;margin-left:10px" class="z-depth-3">
+          <div id="maincontainer" style="flex-grow:1;margin-left:7ppx" class="z-depth-3">
 
             this is main container
 
@@ -98,7 +98,8 @@ include 'dbconn.php';
                });
 
                $(".adminpanel").click(function() {
-                $("#maincontainer").html("This is "+$(this).data("value")+".php Page");
+                // $("#maincontainer").html("This is "+$(this).data("value")+".php Page");
+                $("#maincontainer").load($(this).data("value")+".php");
                });
 
               $(".button-collapse").sideNav();
