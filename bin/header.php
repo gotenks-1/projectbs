@@ -29,11 +29,11 @@ include 'dbconn.php';
 <div class="row" style="margin:0px">
     <nav class="cyan darken-2">
             <div class="nav-wrapper">
-             <a href="#!" class="brand-logo left hide-on-med-and-down"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
-                <a href="#!" class="brand-logo right hide-on-large-only"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
+             <!-- <a href="#!" class="brand-logo left hide-on-med-and-down"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a>
+                <a href="#!" class="brand-logo right hide-on-large-only"><img  src="../sources/images/logos/logoiimt.png" alt="iimtlogo"  class="responsive-img" style="max-height:60px !important"  ></a> -->
 
-                 <div class="hide-on-large-only left">
-                   <a class="button-collapse waves-effect waves-light left" href="#!" data-activates="slide-out" id="sidenavshow">
+                 <div>
+                   <a class="button-collapse waves-effect waves-light left" href="#!" data-activates="slide-out" id="sidenavshow" style="display:block">
                    <i class="material-icons left">menu</i></a>
                 </div>
 
@@ -46,10 +46,10 @@ include 'dbconn.php';
     </nav>
 </div>
 
-<div class="row" style="display:flex;margin:0px">
+<div class="row">
         <!-- SIDE NAV MENU (BOTH SMALL AND LARGE) -->
 
-              <ul id="slide-out" class="side-nav fixed leftside-navigation" style="position:relative; height:100vh; overflow-y:inherit;box-shadow:0 0 0 0">
+              <ul id="slide-out" class="side-nav leftside-navigation" style="height:100vh; overflow-y:inherit;box-shadow:0 0 0 0">
       	            <!-- <li class="user-details cyan darken -2"> -->
       	            <li><div class="userView">
       	               <div class="background ">
@@ -74,16 +74,15 @@ include 'dbconn.php';
               </ul>
 
           <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
-
-          <div id="maincontainer" style="flex-grow:1;margin-left:7ppx" class="z-depth-3">
-
-            this is main container
-
-        </div>
-
-
 </div>
 <!-- </nav> -->
+<div class="row">
+<div class="col s12 " id="maincontainer">
+
+  this is main container
+
+</div>
+</div>
 
 </body>
 <script>
