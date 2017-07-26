@@ -251,6 +251,7 @@ function addNewRowToTable(x,i){
       });
 
       alert("invites send successfully");
+      $("#changeoption").trigger("click");
     });
 
     $("#bcancel").click(function(event) {
