@@ -29,7 +29,7 @@
          <td><?php echo $i++; ?></td>
          <td><?php echo $r["username"]; ?></td>
          <td><?php echo ($r["seen"]==1)?"<i class='material-icons'>check</i>":"<i class='material-icons'>clear</i>"; ?></td>
-         <td><?php echo ($r["accepted"]==1)?"<i class='material-icons'>check</i>":"<i class='material-icons'>clear</i>; ?></td>
+         <td><?php echo ($r["accepted"]==1)?"<i class='material-icons'>check</i>":"<i class='material-icons'>clear</i>"; ?></td>
        </tr>
      <?php endwhile; ?>
   </tbody>
