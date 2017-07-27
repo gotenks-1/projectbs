@@ -5,7 +5,7 @@ if(isset($_POST["finame"])&&isset($_POST["laname"])&&isset($_POST["faname"])&&is
 	       $bb=$_POST["laname"];
 	       $cc=$_POST["faname"];
 	       $dd=$_POST["dateofb"];
-	       $ff=$_POST["branch"];
+	       // $ff=$_POST["branch"];
 	       $gg=$_POST["add"];
 	       $hh=$_POST["ph"];
 	       $ii=$_POST["mail"];
@@ -21,20 +21,19 @@ $c=$_SESSION["branch"];
 $d=$_SESSION["userid"];
 echo "hey";
 
-$qry="update $c set 'fname'='$aa','lname'='$bb','fathername'='$cc','dob'='$dd','branch'='$ff','address'='$gg','contact'='$hh','email'='$ii','gender'='$jj' where userid='$d'";
+$qry="update $c set `fname`='$aa',`lname`='$bb',`fathername`='$cc',`dob`='$dd',`address`='$gg',`contact`='$hh',`email`='$ii',`gender`='$jj' where userid='$d'";
 if($conn->query($qry)){
 
 	echo "PROFILE UPDATED SUCCESSFULLY OF"    .$_POST["finame"];
-}
+
 else
 {
 	echo $qry;
+}}
+else{
+	echo "insert all values";
 }
-}
-// else{
-// 	echo "insert all values";
-// }
- // }
+ }
 else{
 	echo "ERROR: PLEASE CHECK";
 }

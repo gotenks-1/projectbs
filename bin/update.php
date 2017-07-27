@@ -1,6 +1,4 @@
-<?php
-	session_start();
-?>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -40,8 +38,9 @@
 <body>
 	<?php
 		include 'dbconn.php';
+		include 'validate.php';
 		$a=$_SESSION["userid"];	
-		$b=$_SESSION['branch'];
+		$b=$_SESSION["branch"];
 		$qry="select * from  $b where userid='$a'";
 		$rs=$conn->query($qry);
 		$r=$rs->fetch_assoc();
@@ -543,7 +542,7 @@
 			        faname:$("#fname").val(),
 			        dateofb:$("#dofb").val(),
 			        // course:$("#courseselect").val(),
-			        branch:$("#aaa" ).val(),
+			        // branch:$("#aaa" ).val(),
 			        add:$("#address").val(),
 			        ph:$("#contact").val(),
 			        mail:$("#mail").val(),
