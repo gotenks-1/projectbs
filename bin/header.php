@@ -69,6 +69,7 @@ include 'dbconn.php';
                     <li><a href="#!" class="adminpanel" data-value="<?php echo $r['rightuse'];?>"><span><?php echo $r["rightdisplay"];?></span></a></li>
                     <li><div class="divider"></div></li>
                     <?php endforeach;?>
+                   <!--  <li><a href="new_updatepass.php">update pass new</a></li> -->
                 		<li><a class="waves-effect" href="#!" id="mobile-logout">Logout</a></li>
                 		<li><div class="divider"></div></li>
               </ul>
