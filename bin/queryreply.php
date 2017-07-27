@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'validate.php';
 include 'dbconn.php';
 	if(!validate()){
@@ -22,8 +22,8 @@ include 'dbconn.php';
 
 <html lang=en>
 
-<head>
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+<!-- <head>
+
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 </head>
@@ -33,11 +33,11 @@ include 'dbconn.php';
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cookiejs.js"></script>
 <script type="text/javascript" src="../js/materialize.js"></script>
- 
+
 
  <body>
   <div class="container">
-  		<!-- <div class="card-panel teal lighten-2"> -->
+-->
 
   		<h5 class="card-panel teal lighten-2" style="color:white">QUERY</h5>
 	  <div>

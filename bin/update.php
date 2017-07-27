@@ -1,4 +1,4 @@
-<html>
+  <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -49,7 +49,7 @@
 			<span><h4>Update Profile</h4></span>
 	    </div>
 	</div>
-	 
+
 	<div class="container">
 		<div class="row">
 
@@ -62,7 +62,7 @@
 				</span>
 			</div>
 
-			<div class="col s4"> 
+			<div class="col s4">
 				<a class="dropdown-button btn " href='#' data-activates='dropdown1'>option</a>
 				  <!-- Dropdown Structure -->
 				<ul id='dropdown1' class='dropdown-content'>
@@ -78,8 +78,8 @@
 	</div>
 
 	<div class="container z-depth-3">
-	
-		
+
+
 	  				<div class="row z-depth-4">
 						<div class="col s12 red">
 							<span ><h5 id="headingtext">Basic Info.</h5></span>
@@ -108,14 +108,14 @@
 		  					<i class="material-icons prefix" style="font-size: 40px">account_circle</i>
 			          		<input id="fname" type="text" class="validate">
 			          		<label for="fname">Father's Name</label>
-			          	</div>	 
+			          	</div>
 	  				</div>
 	  				<div class="row">
 	  					<div class="input-field col s12">
 		  					<i class="material-icons prefix" style="font-size: 40px">today</i>
 			          		<input id="dob" type="date" class="datepicker">
 			          		<label for="dob">Date of Birth</label>
-			          	</div>	 
+			          	</div>
 	  				</div>
 	  				<div class="row">
 	  					<div class="input-field col s6">
@@ -167,7 +167,7 @@
 							    </select>
 							    <label>Branch</label>
 				       </div>
-			          	</div>	 
+			          	</div>
 
 	  				<div class="row">
 	  					<div class="input-field col s12">
@@ -206,7 +206,7 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px" type="submit" name="action">SUBMIT
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    </div>		
+	  				    </div>
         			</div>
         		</div>
         		</div>
@@ -233,7 +233,7 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px;" type="submit" name="action">Submit
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    </div>		
+	  				    </div>
         			</div>
 	  			</div>
 	  		</div>
@@ -247,9 +247,9 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px;" type="submit" name="action">Submit
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    </div>		
+	  				    </div>
         			</div>
-	  				
+
 	  			</div>
 	  		</div>
 
@@ -265,7 +265,7 @@
 						</span>
 			        </div>
 			        <!- academic qualification -->
-	  				<!-- <div class="col s4"> 
+	  				<!-- <div class="col s4">
 						<a class="dropdown-button btn " href='#' data-activates='dropdown2	'>Course</a>
 					  <!-Dropdown Structure -->
 						<!-- <ul id='dropdown2' class='dropdown-content'>
@@ -287,7 +287,7 @@
 		          			<label id="a" for="empercen">M.Tech%</label>
 		          		</div>
 		          	</div>
-	  				
+
 	  				<div id="bb" class="row">
 	  					<div class="input-field col s12">
 	  						<i class="material-icons prefix" style="font-size: 40px">grade</i>
@@ -295,7 +295,7 @@
 		          			<label id="b" for="ebpercen">B.Tech%</label>
 		          		</div>
 		          	</div>
-		          	
+
 		          	<div id="cc" class="row">
 	  					<div class="input-field col s12">
 	  						<i class="material-icons prefix" style="font-size: 40px">grade</i>
@@ -316,7 +316,7 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px;"" type="submit" name="action">Submit
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    	</div>		
+	  				    	</div>
         				</div>
 	  				</div>
 	  			</div>
@@ -337,13 +337,13 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px" type="submit" name="action">Submit
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    </div>		
+	  				    </div>
         			</div>
 	  			    </div>
 	  		    </div>
             </div>
 	  	</div>
-	  	
+
 	  	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -357,7 +357,7 @@
 				$("dd").show();
 
     			$('select').material_select();
- 
+
                 $("#aaa").show();
 				$("#bbb").hide();
 				$("#ccc").hide();
@@ -391,8 +391,8 @@
 				// $("#bbb").show();
 				// $("#aaa").hide();
 				// });
-				
-			
+
+
                //$("#dbl").click(function(){
    //          	$("#aa").hide();
    //          	$("#bb").show();
@@ -426,7 +426,7 @@
 			selectMonths: true, // Creates a dropdown to control month
 			selectYears: 15 // Creates a dropdown of 15 years to control year
   			});
-        
+
 			   $("#bbi").show();
         		$("#bpw").hide();
         		$("#br").hide();
@@ -476,11 +476,11 @@
         		$("#baq").hide();
         		$("#bs").show();
         		$("#headingtext").html("Skills");
-        		
+
         	});
 		});
-	</script>  
+	</script>
 
-  	
+
 	</body>
 	</html>

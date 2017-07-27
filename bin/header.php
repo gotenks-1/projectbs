@@ -92,14 +92,19 @@ include 'dbconn.php';
                //main contioner load
               //  $("#maincontainer").load("sendinvites.php");
 
+
+              // $("#sidenavshow").trigger('click');
+
                $(".profilepage").click(function() {
                  /* Act on the event */
                  $("#maincontainer").load("userprofile.php");
+                 $("#sidenav-overlay").trigger("click");
                });
 
                $(".adminpanel").click(function() {
                 // $("#maincontainer").html("This is "+$(this).data("value")+".php Page");
                 $("#maincontainer").load($(this).data("value")+".php");
+                 $("#sidenav-overlay").trigger("click");
                });
 
               $(".button-collapse").sideNav();
