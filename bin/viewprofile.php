@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +38,12 @@
 
   								while ($row=$q->fetch_assoc()) {
   									# code...
-
-  									// echo "hi";
-  									 echo "<li><a href =". $row['userid'] ."</a>".$row['userid']."</li>";
+                                       									// echo "hi";
+  									 echo "<li class='selid'>".$row['userid']."</li>";
                                          }
 										echo "</ul>";
 
   							?>
-
 	            	</div>
 	            </div>
 	        	<div class="row">
@@ -52,7 +51,7 @@
 	        	       <label><font size="4">Full Name :</font></label>
 	        	   	</div>
 	        	   	 <div class="col s5">
-	        	   		<label>........</label>
+	        	   		<label id="name">........</label>
 	        	   	</div>
 	        	</div>
 	        	<div class="row">
@@ -60,7 +59,7 @@
 	        	      <label><font size="4">Father's name :</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>
+	        	      <label id="fa_name">.....</label>
 	        	   </div>
 	        	</div>
 	        	<div class="row">
@@ -68,7 +67,7 @@
 	        	      <label><font size="4">Contact:</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>
+	        	      <label id="cont">.....</label>
 	        	   </div>
 	        	</div>
 	        	<div class="row">
@@ -76,7 +75,7 @@
 	        	      <label><font size="4">Address:</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>
+	        	      <label id="Addr">.....</label>
 	        	   </div>
 	        	</div>
 	        	<div class="row">
@@ -84,22 +83,41 @@
 	        	      <label><font size="4">Email :</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>
-	        	   </div>
+	        	      <label id="email">.....</label>
+	        	   </div> 
 	        	</div>
-
-
-
-
-
-
-
-
-
 	        </div>
 
 	    </div>
 </div>
+<script type="text/javascript">
+  //alert("hi");
+ $(document).ready(function(){
 
+ 	 	$('.selid').click(function(){
+            //$(this).data(	"value")
+            //console.log($(this));
+            var getId=$(this).text();
+           //alert("value"+getId);
+          $.post("userrecords.php",{id:getId},function(data)
+          {   
+          	//console.log(data);
+          	//var fullnameerge(data['fname'],data['lname']);
+          	$('#name').html(data['fname']+" "+data['lname']);
+            $('#fa_name').html(data['Father_name']);
+            $('#cont').html(data['contact']);
+            $('#Addr').html(data['Address']);
+            $('#email').html(data['email']);
+            //alert("data"+data);
+          },"json");
+ 	 	});    
+	 
+ });
+
+  
+</script>
 </body>
+
 </html>
+<!-- var getId=$('#dropdown1').val();
+    alert("value "+getId); -->
