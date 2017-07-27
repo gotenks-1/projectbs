@@ -9,12 +9,12 @@ if(isset($_POST["finame"])&&isset($_POST["laname"])&&isset($_POST["faname"])&&is
 	       $gg=$_POST["add"];
 	       $hh=$_POST["ph"];
 	       $ii=$_POST["mail"];
-	       $jj=$_POST["gender"];	
+	       $jj=$_POST["gender"];
 	       echo"holla";
 
 
 
-// if($aa!=""&&$bb!=""&&$cc!=""&&$dd!=""&&$ff!=""&&$gg!=""&&$hh!=""&&$ii!=""&&$jj!=""){   
+// if($aa!=""&&$bb!=""&&$cc!=""&&$dd!=""&&$ff!=""&&$gg!=""&&$hh!=""&&$ii!=""&&$jj!=""){
 include 'dbconn.php';
 include 'validate.php';
 $c=$_SESSION["branch"];
@@ -25,15 +25,17 @@ $qry="update $c set `fname`='$aa',`lname`='$bb',`fathername`='$cc',`dob`='$dd',`
 if($conn->query($qry)){
 
 	echo "PROFILE UPDATED SUCCESSFULLY OF"    .$_POST["finame"];
-
+}
 else
 {
 	echo $qry;
-}}
+}
+
+}
 else{
 	echo "insert all values";
 }
- }
-else{
-	echo "ERROR: PLEASE CHECK";
-}
+//  }
+// else{
+// 	echo "ERROR: PLEASE CHECK";
+// }
