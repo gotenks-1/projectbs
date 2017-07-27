@@ -15,77 +15,77 @@
 	        <div class="col s12">
 	            <div class="row">
 	            	<div class="col s4 ">
-	            	 <a class='dropdown-button btn' href='#' data-activates='dropdown1'>User id</a> 	
-                           
+	            	 <a class='dropdown-button btn' href='#' data-activates='dropdown1'>User id</a>
+
    						<!-- Dropdown Structure -->
- 							 <ul id='dropdown1' class='dropdown-content'> 
+ 							 <!-- <ul id='dropdown1' class='dropdown-content'>  -->
   								  <!-- <li><a href="#!">ones</a></li>
   								  <li><a href="#!">two</a></li>
    								  <li class="divider"></li>
    								  <li><a href="#!">three</a></li>
   								  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
   								  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
-  							</ul> 
-  							
+  							<!-- </ul>  -->
+
   							 <?php
   								include 'dbconn.php';
-  								 //$ui=$_SESSION['userid'];	
-  								$q=$conn->query('Select userid from logindetail');
-  								
+  								 //$ui=$_SESSION['userid'];
+  								$q=$conn->query('Select userid from LoginDetail');
+
   								//$row=mysqli_num_rows($q);
   								echo "<ul id='dropdown1' class='dropdown-content'>";
 
   								while ($row=$q->fetch_assoc()) {
   									# code...
 
-  									echo "hi";
-  									 echo "<li><a href =". $row['userid'] ."</a></li>";
+  									// echo "hi";
+  									 echo "<li><a href =". $row['userid'] ."</a>".$row['userid']."</li>";
                                          }
 										echo "</ul>";
-  								
-  							?>   
-	            		
+
+  							?>
+
 	            	</div>
-	            </div> 
+	            </div>
 	        	<div class="row">
 	        	    <div class=" col s6 ">
 	        	       <label><font size="4">Full Name :</font></label>
 	        	   	</div>
 	        	   	 <div class="col s5">
 	        	   		<label>........</label>
-	        	   	</div>	        		
+	        	   	</div>
 	        	</div>
 	        	<div class="row">
 	        	   <div class="col s6">
-	        	      <label><font size="4">Father's name :</font></label>	        	   	
+	        	      <label><font size="4">Father's name :</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>	        	   	
-	        	   </div>	        		
+	        	      <label>.....</label>
+	        	   </div>
 	        	</div>
 	        	<div class="row">
 	        	   <div class="col s6">
-	        	      <label><font size="4">Contact:</font></label>	        	   	
+	        	      <label><font size="4">Contact:</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>	        	   	
-	        	   </div>	        		
+	        	      <label>.....</label>
+	        	   </div>
 	        	</div>
 	        	<div class="row">
 	        	   <div class="col s6">
-	        	      <label><font size="4">Address:</font></label>	        	   	
+	        	      <label><font size="4">Address:</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>	        	   	
-	        	   </div>	        		
+	        	      <label>.....</label>
+	        	   </div>
 	        	</div>
 	        	<div class="row">
 	        	   <div class="col s6">
-	        	      <label><font size="4">Email :</font></label>	        	   	
+	        	      <label><font size="4">Email :</font></label>
 	        	   </div>
 	        	   <div class=" col s5">
-	        	      <label>.....</label>	        	   	
-	        	   </div>	        		
+	        	      <label>.....</label>
+	        	   </div>
 	        	</div>
 
 
@@ -97,7 +97,7 @@
 
 
 	        </div>
-		
+
 	    </div>
 </div>
 
