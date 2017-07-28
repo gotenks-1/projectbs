@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>JOB VACANCY</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" type="text/css" href="../css/styl.css">
     <link rel="stylesheet" type="text/css" href="../css/materialize.css">
     <script type="text/javascript" src = "../js/jquery.js"></script>
@@ -17,6 +21,7 @@
 </div>
 </header>
 <body>
+
 <div class="row">
     <form class="col s12">
       
@@ -75,6 +80,13 @@
           <textarea id="required_skills" class="materialize-textarea"></textarea>
           <label for="required_skills">REQUIRED SKILLS</label>
         </div>
+
+        <div class="row">
+        <div class="input-field col s12">
+         <input type="text" class="datepicker" id="last_date">
+         <label for="last_date">LAST DATE TO APPLY</label>
+         </div>
+         </div>
         <div class="row">
         <div class="col s12" style="display: flex;justify-content: center;">
 <button class="btn waves-effect waves-light center" type="submit" name="action" id="btnjob">CREATE VACANCY
@@ -82,18 +94,34 @@
   </button>
   </div>
   </div>
-
-
-
 <script type="text/javascript">
   $(document).ready(function(){
+    var mili=Date.now()+(86400*1000*5);
+    console.log(mili);
+    var daymin=new Date();
+    console.log(daymin.getTime());
+    console.log(daymin.toDateString());
+    daymin.setTime(mili);
+    var newdate=new Date(mili);
+    console.log(newdate.toDateString());
+    console.log(daymin.getTime());
+    console.log(daymin.toDateString());
+    
 
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    min:daymin,
+    format:'yyyy-mm-dd',
+    closeOnSelect: true // Close upon selecting a date,
+  });
+ 
     $("#btnjob").click(function(){
-
-
-      console.log("clicked");
-
-      $.post("functionjobvacancy.php",{
+      console.log($("#last_date").val());
+       $.post("functionjobvacancy.php",{
         cname:$("#company_name").val(),
         jprofile:$("#job_profile").val(),
         jlocation:$("#job_location").val(),
@@ -101,18 +129,16 @@
         cdescription:$("#company_description").val(),
         jdescription:$("#job_description").val(),
         rskills:$("#required_skills").val(),
+        date:$("#last_date").val()
       },function(data){
         alert(data);
+        // console.log(data);
+        window.open("jobvacancy.php","_self");
       });
 
     });
-
-
-
-
   });
 </script>
-
 
 </body>
 </html>
