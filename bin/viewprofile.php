@@ -95,14 +95,18 @@
  $(document).ready(function(){
 
  	 	$('.selid').click(function(){
-            //$(this).data(	"value")
-            //console.log($(this));
+              //console.log($(this));
             var getId=$(this).text();
+            //var getb=$(this).text();
+            //alert("getb");
+            // var x=$(this).data("branch");
+            // alert("x");
            //alert("value"+getId);
           $.post("userrecords.php",{id:getId},function(data)
           {   
           	//console.log(data);
           	//var fullnameerge(data['fname'],data['lname']);
+          	
           	$('#name').html(data['fname']+" "+data['lname']);
             $('#fa_name').html(data['Father_name']);
             $('#cont').html(data['contact']);
@@ -110,7 +114,8 @@
             $('#email').html(data['email']);
             //alert("data"+data);
           },"json");
- 	 	});    
+ 	 	}); 
+ 	 	 
 	 
  });
 

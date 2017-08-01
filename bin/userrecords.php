@@ -15,4 +15,7 @@ while ($rows=$res->fetch_assoc()) {
 	$data_array=$rows;
 	//echo "hi";
 	echo json_encode($data_array);
+
+
+
 }?>	
