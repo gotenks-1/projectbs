@@ -16,7 +16,7 @@ include 'dbconn.php';
 		 $dbarray = mysqli_fetch_object($result);
 
 		 $val=$dbarray->type;
-    var_dump($val);
+
 		 Mysqli_free_result($result);
 
 		 if(isset($_POST['submit_btn']) && $val=="normal")
@@ -45,7 +45,7 @@ include 'dbconn.php';
 
   		<h5 class="card-panel teal lighten-2" style="color:white">QUERY</h5>
 	  <div class="">
-	    <form class="col s12" method="POST" action="<?php $_SERVER['PHP_SELF'];?>" >
+	    <form class="col s12" action="querypage.php" method="POST" >
  	      <div class="row">
 	        <div class="input-field col s12">
          	   <input id="input_text" type="text" name='subject' data-length="150">
