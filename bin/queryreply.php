@@ -10,9 +10,9 @@ include 'dbconn.php';
 
 		 $result=mysqli_query($conn,$query);
 
-		 $dbarray = mysqli_fetch_all($result,MYSQL_ASSOC);
+		//  $dbarray = mysqli_fetch_all($result,MYSQL_ASSOC);
 
-	     Mysqli_free_result($result);
+	    //  Mysqli_free_result($result);
 	 }
 ?>
 
@@ -43,7 +43,8 @@ include 'dbconn.php';
 	  <div>
 	      	<div  style="height:80%; overflow:scroll; overflow-x:hidden;">
 			  	 <ul class="collection with-header">
-			        <?php foreach($dbarray as $data) : ?>
+						 <?php if(mysqli_num_rows($result)>0):?>
+			        <?php foreach($result as $data) : ?>
 			        <li class="collection-item" >
 			        	<div class="cyan-text" style="font-weight:bold; font-style:italic;" >
 			        		<h5><?php echo $data['subject'].': '; ?><h5>
@@ -57,6 +58,7 @@ include 'dbconn.php';
 			        </div>
 			        </li>
                     <?php endforeach; ?>
+									<?php endif; ?>
 			     </ul>
 		   </div>
 	    <div class="row">
