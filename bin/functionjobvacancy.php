@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function randomword($sss){
 	$s="";
@@ -16,7 +16,7 @@ function randomword($sss){
 
 
 if((isset($_POST["cname"]))&&isset($_POST["jprofile"])&&isset($_POST["jlocation"])&&isset($_POST["ecriteria"])&&isset($_POST["cdescription"])&&isset($_POST["jdescription"])&&isset($_POST["rskills"])&&isset($_POST["date"])){
-	       
+
 	       $a=$_POST["cname"];
 	       $b=$_POST["jprofile"];
 	       $c=$_POST["jlocation"];
@@ -26,14 +26,16 @@ if((isset($_POST["cname"]))&&isset($_POST["jprofile"])&&isset($_POST["jlocation"
 	       $g=$_POST["rskills"];
 	       $h=$_POST["date"];
 	       $jid=$a.randomword(6);
+				 echo $h;
 
-if($a!=""&&$b!=""&&$c!=""&&$d!=""&&$e!=""&&$f!=""&&$g!=""){      
+if($a!=""&&$b!=""&&$c!=""&&$d!=""&&$e!=""&&$f!=""&&$g!=""){
 include "dbconn.php";
 
-$qry="insert into job_vacancy values('$jid','$a','$b','$c','$d','$e','$f','$g','$h')";
+// $qry="insert into job_vacancy values('$jid','$a','$b','$c','$d','$e','$f','$g','$h')";
+$qry="INSERT INTO `job_vacancy` values ('$jid','$a','$b','$c','$d','$e','$f','$g','$h')";
 if($conn->query($qry)){
 
-	echo "VACANCY CREATED SUCCESSFULLY OF      ".$_POST["cname"];
+	echo "VACANCY CREATED FOR    '".$_POST["cname"]."'";
 }
 else
 {
@@ -41,7 +43,7 @@ else
 }
 }
 else{
-	echo "insert all values";
+	echo "Insert all values";
 }
 }
 else{

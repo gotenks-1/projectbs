@@ -8,7 +8,7 @@ if(isset($_POST["np"])&&isset($_POST["cp"])){
 		include 'validate.php';
 		// $c=$_SESSION["type"];
 		$d=$_SESSION["userid"];
-		$qry="update `logindetail` set `pass`='$b' where userid='$d'";
+		$qry="UPDATE `LoginDetail` SET `pass` = '".$a."' WHERE userid = '".$d."' ";
 		if($conn->query($qry)){
 		echo "PASSWORD UPDATED SUCCESSFULLY";}
 

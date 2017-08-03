@@ -39,12 +39,12 @@
 	<?php
 		include 'dbconn.php';
 		include 'validate.php';
-		$a=$_SESSION["userid"];	
+		$a=$_SESSION["userid"];
 		$b=$_SESSION["branch"];
 		$qry="select * from  $b where userid='$a'";
 		$rs=$conn->query($qry);
 		$r=$rs->fetch_assoc();
-	?>	
+	?>
 
 	<div class="row red">
 		<div class="col s2 m2 l2">
@@ -59,7 +59,7 @@
 			<span><h4>Update Profile</h4></span>
 	    </div>
 	</div>
-	 
+
 	<div class="container">
 		<div class="row">
 
@@ -72,7 +72,7 @@
 				</span>
 			</div>
 
-			<div class="col s4"> 
+			<div class="col s4">
 				<a class="dropdown-button btn " href='#' data-activates='dropdown1'>option</a>
 				  <!-- Dropdown Structure -->
 				<ul id='dropdown1' class='dropdown-content'>
@@ -88,8 +88,8 @@
 	</div>
 
 	<div class="container z-depth-3">
-	
-		
+
+
 	  				<div class="row z-depth-4">
 						<div class="col s12 red">
 							<span ><h5 id="headingtext">Basic Info.</h5></span>
@@ -118,14 +118,14 @@
 		  					<i class="material-icons prefix" style="font-size: 40px">account_circle</i>
 			          		<input id="fname" type="text" class="validate" value="<?php echo $r['fathername'];?>">
 			          		<label for="fname">Father's Name</label>
-			          	</div>	 
+			          	</div>
 	  				</div>
 	  				<div class="row">
 	  					<div class="input-field col s12">
 		  					<i class="material-icons prefix" style="font-size: 40px">today</i>
 			          		<input id="dofb" type="date" class="datepicker" value="<?php echo $r['dob'];?>">
 			          		<label for="dofb">Date of Birth</label>
-			          	</div>	 
+			          	</div>
 	  				</div>
 	  				<div class="row">
 	  					<div class="input-field col s6">
@@ -155,7 +155,7 @@
 							      <option value="2">ME</option>
 							      <option value="3">EC</option>
 							      <option value="4">CE</option>
-							      
+
 							    </select>
 							    <label>Branch</label>
 				       </div>
@@ -178,7 +178,7 @@
 							    </select>
 							    <label>Branch</label>
 				       </div>
-			          	</div>	 
+			          	</div>
 
 	  				<div class="row">
 	  					<div class="input-field col s12">
@@ -207,7 +207,7 @@
 			          		<input name="group1" type="radio" id="gmale" <?php if($r['gender']=='male') echo 'checked';?> />
 			          		<label for="gmale">Male</label>
 			          		<input name="group1" type="radio" id="gfemale" <?php if($r['gender']=='female') echo 'checked';?> />
-			          		<label for="gfemale" style="margin-left: 0px">Female</label>   
+			          		<label for="gfemale" style="margin-left: 0px">Female</label>
 			          		<input name="group1" type="radio" id="gother" <?php if($r['gender']=='others') echo 'checked';?> />
 			          		<label for="gother" style="margin-left: 0px">Others</label>
 		          		</div>
@@ -217,7 +217,7 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px" id="btna" type="submit" name="action">SUBMIT
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    </div>		
+	  				    </div>
         			</div>
         		</div>
         		</div>
@@ -239,12 +239,12 @@
 			          		<label for="cpw">Confirm Password</label>
 		          		</div>
 	  				</div>
-	  				<div class="row">
+            <div class="row">
 	  					<div class="col s12" style="display: flex;flex-direction: row-reverse;">
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px;" id="btnb" type="submit" name="action">Submit
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    </div>		
+	  				    </div>
         			</div>
 	  			</div>
 	  		</div>
@@ -254,7 +254,7 @@
 	  				<div class="container">
 
 	  						<div class="row">
-	  						   
+
 									<div class="col s6">
 										<form action="#">
 									    <div class="file-field input-field">
@@ -287,7 +287,7 @@
 					  					<button class="btn waves-effect waves-light" style="margin-top:20px;" type="submit" name="action">Submit
 				    						<i class="material-icons right">send</i>
 				 				    	</button>
-			  				    	</div>		
+			  				    	</div>
 		        				</div>
 	  						</div>
 	  					</div>
@@ -306,7 +306,7 @@
 						</span>
 			        </div>
 			        <!- academic qualification -->
-	  				<!-- <div class="col s4"> 
+	  				<!-- <div class="col s4">
 						<a class="dropdown-button btn " href='#' data-activates='dropdown2	'>Course</a>
 					  <!-Dropdown Structure -->
 						<!-- <ul id='dropdown2' class='dropdown-content'>
@@ -328,7 +328,7 @@
 		          			<label id="a" for="empercen">M.Tech%</label>
 		          		</div>
 		          	</div>
-	  				
+
 	  				<div id="bb" class="row">
 	  					<div class="input-field col s12">
 	  						<i class="material-icons prefix" style="font-size: 40px">grade</i>
@@ -336,7 +336,7 @@
 		          			<label id="b" for="ebpercen">B.Tech%</label>
 		          		</div>
 		          	</div>
-		          	
+
 		          	<div id="cc" class="row">
 	  					<div class="input-field col s12">
 	  						<i class="material-icons prefix" style="font-size: 40px">grade</i>
@@ -357,7 +357,7 @@
 		  					<button class="btn waves-effect waves-light" style="margin-top:20px;" id="btnd" type="submit" name="action">Submit
 	    						<i class="material-icons right">send</i>
 	 				    	</button>
-	  				    	</div>		
+	  				    	</div>
         				</div>
 	  				</div>
 	  			</div>
@@ -379,15 +379,15 @@
 			  					<button class="btn waves-effect waves-light" style="margin-top:20px" type="submit" name="action">Submit
 		    						<i class="material-icons right">send</i>
 		 				    	</button>
-		  				    </div>		
+		  				    </div>
         				</div>
 	  			    </div>
 	  		    </div>
             </div>
 	  	</div>
-	  	
+
 	  	</div>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			 $('.materialboxed').materialbox();
@@ -406,7 +406,7 @@
 				$("dd").show();
 
     			$("select").material_select();
- 
+
                 $("#aaa").show();
 				$("#bbb").hide();
 				$("#ccc").hide();
@@ -440,8 +440,8 @@
 				// $("#bbb").show();
 				// $("#aaa").hide();
 				// });
-				
-			
+
+
                //$("#dbl").click(function(){
    //          	$("#aa").hide();
    //          	$("#bb").show();
@@ -466,7 +466,7 @@
    //          });
 
 			$("#back_button").click(function() {
-				window.open("3.html","_self");
+				window.open("header.php","_self");
 			});
 
 			$(".chips").material_chip();
@@ -475,7 +475,7 @@
 			selectMonths: true, // Creates a dropdown to control month
 			selectYears: 15 // Creates a dropdown of 15 years to control year
   			});
-        
+
 			   $("#bbi").show();
         		$("#bpw").hide();
         		$("#br").hide();
@@ -525,12 +525,12 @@
         		$("#baq").hide();
         		$("#bs").show();
         		$("#headingtext").html("Skills");
-        		
+
         	});
-        	
+
         	$("#btna").click(function(){
         			var g="male";
-        			
+
         			if($("#gfemale")["0"].checked==true)
         			g="female";
 
@@ -538,7 +538,8 @@
         			g="others";
 
         		console.log("clicked");
-        		$.post("functionupdate.php",{
+
+          	$.post("functionupdate.php",{
 
 			        finame:$("#firstname").val(),
 			        laname:$("#last_name").val(),
@@ -555,7 +556,8 @@
 					        window.open("update.php","_self");
 					      });
         	});
-        	$("#btnd").click(function(){
+
+          $("#btnd").click(function(){
         		console.log("clicked");
         		$.post("functionmarks.php",{
         			bmarks:$("#ebpercen").val(),
@@ -564,10 +566,11 @@
         		},function(data){
         		     alert(data);
         			window.open("update.php","#baq");
-        		
+
         		});
         	});
-        	$("#btnb").click(function(){
+
+          $("#btnb").click(function(){
         		console.log("clicked");
         		$.post("functionpass.php",{
         			np:$("#pw").val(),
@@ -577,12 +580,14 @@
         				windows.open("update.php","#bpw")
 
         			});
-				});
+				    });
+
+
 
 		});
 
-	</script>  
+	</script>
 
-  	
+
 	</body>
 	</html>

@@ -457,12 +457,15 @@ if (jQuery) {
       function accordionOpen(object) {
         $panel_headers = $this.find('> li > .collapsible-header');
         if (object.hasClass('active')) {
+
           object.parent().addClass('active');
         }
         else {
+
           object.parent().removeClass('active');
         }
         if (object.parent().hasClass('active')){
+        
           object.siblings('.collapsible-body').stop(true,false).slideDown({ duration: 350, easing: "easeOutQuart", queue: false, complete: function() {$(this).css('height', '');}});
         }
         else{

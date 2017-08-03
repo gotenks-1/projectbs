@@ -3,7 +3,7 @@
 
   include 'dbconn.php';
 
-  $rs=$conn->query("select * from vacnacy");
+  $rs=$conn->query("select * from job_vacancy");
 
 ?>
 <div class="container">
@@ -12,7 +12,7 @@
       <label class="active">Select vacnacy</label>
       <select id="vselect">
         <?php while($r=$rs->fetch_assoc()): ?>
-         <option value="<?php echo $r['id'];?>"><?php echo $r["id"]; ?></option>
+         <option value="<?php echo $r['job_id'];?>"><?php echo $r["job_id"]; ?></option>
        <?php endwhile; ?>
       </select>
     </div>
